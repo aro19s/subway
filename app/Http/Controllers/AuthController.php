@@ -19,7 +19,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function login(AuthRequest $request): JsonResponse
+    public function login(Request $request): JsonResponse
     {
         try {
             if (!Auth::attempt($request->only('email', 'password'))) {
@@ -50,7 +50,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function logout(AuthRequest $request): JsonResponse
+    public function logout(Request $request): JsonResponse
     {
         try {
             // Eliminar Token

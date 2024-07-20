@@ -69,7 +69,7 @@ class SalesController extends Controller
     public function salesHistory(): JsonResponse
     {
         try {
-            $history = Bill::paginate(10);
+            $history = Bill::with('users')->paginate(10);
             return response()->json([
                 'success' => true,
                 'message' => 'Historial encontrado con éxito',

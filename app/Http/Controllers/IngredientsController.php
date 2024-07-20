@@ -63,7 +63,7 @@ class IngredientsController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function showIngredientById($id): JsonResponse
+    public function showIngredientById(int $id): JsonResponse
     {
         try {
             $ingredient = Ingredient::find($id);
@@ -96,7 +96,7 @@ class IngredientsController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function updateIngredient(IngredientRequest $request, $id): JsonResponse
+    public function updateIngredient(IngredientRequest $request, int $id): JsonResponse
     {
         try {
             $ingredient = Ingredient::find($id);
@@ -128,7 +128,7 @@ class IngredientsController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function deleteIngredient($id): JsonResponse
+    public function deleteIngredient(int $id): JsonResponse
     {
         try {
             $ingredient = Ingredient::find($id);

@@ -43,7 +43,7 @@ class ProductsController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function showProductById($product_id): JsonResponse
+    public function showProductById(int $product_id): JsonResponse
     {
         try {
             $product = Product::with('ingredients')->findOrFail($product_id);
@@ -121,7 +121,7 @@ class ProductsController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function deleteProduct($product_id): JsonResponse
+    public function deleteProduct(int $product_id): JsonResponse
     {
         try {
             $product = Product::findOrFail($product_id);
